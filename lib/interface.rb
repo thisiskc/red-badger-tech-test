@@ -12,4 +12,11 @@ def send_instructions(input)
   movement_instructions = parsed_instructions[1]
 
   grid = Grid.new(grid_size[0], grid_size[1])
+
+  starting_positions.each_with_index do |position, i|
+    starting_command = position.gsub(' ', '').split('')
+    instructions = movement_instructions[i]
+    starting_pos = [starting_command[0].to_i, starting_command[1].to_i]
+    direction = starting_command[2]
+  end
 end

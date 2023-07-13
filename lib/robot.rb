@@ -66,17 +66,21 @@ class Robot
       when 'W'
         new_x -= 1
       end
-  
-      if grid.valid_move?(new_position, @direction)
-        @position_x = new_position[0]
-        @position_y = new_position[1]
-        @lost = grid.lost_move?(new_position, @direction)
-      end
 
+      check_valid_position(grid, [new_x, new_y])
+    end
+
+    def check_valid_position(grid, new_position)
+      if grid.valid_move?(new_position, @direction)
+          @position_x = new_position[0]
+          @position_y = new_position[1]
+          @lost = grid.lost_move?(new_position, @direction)
+      end
+  
       if @lost
-        last_valid_position = grid.get_edge_coordinates(@position_x, @position_y)
-        @position_x = last_valid_position[0]
-        @position_y = last_valid_position[1]
+          last_valid_position = grid.get_edge_coordinates(@position_x, @position_y)
+          @position_x = last_valid_position[0]
+          @position_y = last_valid_position[1]
       end
     end
 end

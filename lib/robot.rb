@@ -83,5 +83,12 @@ class Robot
           @position_y = last_valid_position[1]
       end
     end
+
+    def get_final_position
+      result = "#{@position_x} #{@position_y} #{@direction}"
+      return "#{result} LOST" if @lost
+  
+      result
+    end
 end
 

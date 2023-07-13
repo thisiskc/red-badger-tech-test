@@ -18,5 +18,13 @@ def send_instructions(input)
     instructions = movement_instructions[i]
     starting_pos = [starting_command[0].to_i, starting_command[1].to_i]
     direction = starting_command[2]
+
+    robot = Robot.new(starting_pos, direction)
+
+    result = robot.move(instructions, grid)
+
+    output << result
   end
+
+  output.join("\n")
 end

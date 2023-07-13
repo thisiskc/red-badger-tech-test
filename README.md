@@ -28,8 +28,8 @@
 * If a robot goes off the map, they leave a "warning" at their last grid location
 * If another robot is asked to move off the grid over a coordinate with a "warning", they will ignore that instruction
 
-* Edge case(s):
-- CORNERS: If a robot goes off the grid at `0,0` while facing `South`, a subsquent robot facing `West` will still go off the grid
+### Edge case(s):
+- *CORNERS:* If a robot goes off the grid at `0,0` while facing `South`, a subsquent robot facing `West` will still go off the grid
 
 ### Input
 

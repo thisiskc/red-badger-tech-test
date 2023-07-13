@@ -24,5 +24,32 @@ class Robot
       end
     end
 
+    private
+
+    def turn_right
+        case @direction
+        when 'N'
+          @direction = 'E'
+        when 'E'
+          @direction = 'S'
+        when 'S'
+          @direction = 'W'
+        when 'W'
+          @direction = 'N'
+        end
+    end
+    
+    def turn_left
+        case @direction
+        when 'N'
+            @direction = 'W'
+        when 'W'
+            @direction = 'S'
+        when 'S'
+            @direction = 'E'
+        when 'E'
+            @direction = 'N'
+        end
+    end
 end
 

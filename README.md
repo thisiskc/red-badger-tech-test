@@ -53,8 +53,8 @@ LLFFFLFLFL
 
 1. Load up `IRB` or a REPL of your choice
 2. Require the interface.rb file:
-    If using PRY: `load './lib/interface.rb'`
-    If using IRB: `require './lib/interface.rb'`
+    - If using PRY: `load './lib/interface.rb'`
+    - If using IRB: `require './lib/interface.rb'`
 
 ### Command
 

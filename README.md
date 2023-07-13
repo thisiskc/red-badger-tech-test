@@ -53,11 +53,14 @@ LLFFFLFLFL
 
 1. Load up `IRB` or a REPL of your choice
 2. Require the interface.rb file:
-   If using PRY: `load './lib/interface.rb'`
-   If using IRB: `require './lib/interface.rb'`
+    If using PRY: `load './lib/interface.rb'`
+    If using IRB: `require './lib/interface.rb'`
 
 ### Command
 
 - To send your instructions: `send_instructions(input)`
 
-For example, if you would like to run the sample data: `send_instructions("5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W \nLLFFFLFLFL")`
+For example, if you would like to run the sample data: 
+    ```
+    send_instructions("5 3\n1 1 E\nRFRFRFRF\n3 2 N\nFRRFLLFFRRFLL\n0 3 W \nLLFFFLFLFL")
+    ```

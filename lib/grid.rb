@@ -13,8 +13,7 @@ class Grid
     potential_edge_position = [get_new_coord(position[0], @max_x), get_new_coord(position[1], @max_y), direction]
     can_sense_edge_move = @lost_robot_coordinates.include?(potential_edge_position)
 
-    if position != [potential_edge_position[0],
-                    potential_edge_position[1]] && !can_sense_edge_move && !@lost_robot_coordinates.include?(potential_edge_position)
+    if position != potential_edge_position[0..1] && !can_sense_edge_move
       @lost_robot_coordinates << potential_edge_position
     end
 

@@ -10,7 +10,7 @@ class Grid
   end
 
   def valid_move?(position, direction)
-    potential_edge_position = [get_new_coord(position[0], @max_x), get_new_coord(position[1], @max_y), direction]
+    potential_edge_position = get_edge_coordinates(position[0], position[1]) << direction
     can_sense_edge_move = @lost_robot_coordinates.include?(potential_edge_position)
 
     if position != potential_edge_position[0..1] && !can_sense_edge_move
@@ -20,6 +20,15 @@ class Grid
     !can_sense_edge_move
   end
 
+  def lost_move?(position, direction)
+    potential_edge_position = get_edge_coordinates(position[0], position[1]) << direction
+    is_off_edge = potential_edge_position != position
+    @lost_robot_coordinates.include?(potential_edge_position) && is_off_edge
+  end
+
+  def get_edge_coordinates(pos_x, pos_y)
+    [get_new_coord(pos_x, @max_x), get_new_coord(pos_y, @max_y)]
+  end
 
   private
 

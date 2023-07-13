@@ -24,4 +24,18 @@ describe Grid do
       expect(new_grid.all_lost_coordinates).to eq [[3, 4, 'W'], [5, 2, 'W']]
     end
   end
+
+  describe '#lost_move?' do
+    before(:each) do
+      @grid = Grid.new(5, 3, [[5, 3, 'N']])
+    end
+
+    it 'returns true when a position is off-grid' do
+      expect(@grid.lost_move?([5, 4], 'N')).to eq true
+    end
+
+    it 'returns false when a position is not off-grid' do
+      expect(@grid.lost_move?([5, 2], 'N')).to eq false
+    end
+  end
 end

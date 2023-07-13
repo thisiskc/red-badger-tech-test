@@ -3,6 +3,14 @@ class Grid
     @max_x = max_x
     @max_y = max_y
     @lost_robot_coordinates = lost_robot_coordinates
+
+    if max_x > 50
+      @max_x = 50
+    end
+
+    if max_y > 50
+      @max_y = 50
+    end
   end
   
   def all_lost_coordinates
